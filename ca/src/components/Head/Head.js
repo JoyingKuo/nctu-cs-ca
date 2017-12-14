@@ -10,6 +10,7 @@ import Home from 'material-ui/svg-icons/content/flag';
 import Map from 'material-ui/svg-icons/maps/map';
 import Graduation from 'material-ui/svg-icons/social/school';
 import Check from 'material-ui/svg-icons/av/featured-play-list';
+import Question from 'material-ui/svg-icons/action/question-answer';
 import defalt from './defalt.jpg';
 
 import HomeItem from './Home/Home.js';
@@ -25,6 +26,7 @@ const homeIcon = <Home />;
 const mapIcon = <Map />;
 const graduationIcon = <Graduation />;
 const checkIcon = <Check />;
+const faqIcon = <Question/>;
 
 let MapCourseData;
 let StudentCosPas;
@@ -382,11 +384,17 @@ class Head extends Component {
             }
             else if(index===3){
                 ReactDOM.render(
-					<a>
-						<FadeIn>
-							<MapItem />
-						</FadeIn>
-					</a>,
+                    <a>
+                        <FadeIn>
+                            <MapItem />
+                        </FadeIn>
+                    </a>,
+                    document.getElementById('page'));
+            }
+            else if(index===4){
+                ReactDOM.render(
+                    <div>
+                    </div>,
                     document.getElementById('page'));
             }
 
@@ -429,6 +437,13 @@ class Head extends Component {
                                     icon={mapIcon}
                                     style={this.state.styleButton}
                                     onTouchTap={() => this.select(2)}
+                                />
+                                <BottomNavigationItem
+                                    label="FAQ"
+                                    className="TopButton"
+                                    icon={faqIcon}
+                                    style={this.state.styleButton}
+                                    onTouchTap={() => this.select(4)}
                                 />
 							</BottomNavigation>
 						</MuiThemeProvider>
