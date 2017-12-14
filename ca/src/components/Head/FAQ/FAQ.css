@@ -1,0 +1,156 @@
+
+#faq-modal {
+    position: relative;
+    background: #fff;
+    border-radius: 4px;
+    margin: 50px auto;
+    padding: 3em;
+    width: 74em;
+    max-width: 100%;
+}
+
+#faq-modal h1 {
+    color: #444444;
+    letter-spacing: -0.015em;
+    font-weight: 700;
+    line-height: 1.375;
+    font-size: 2.25em;
+    margin: 0 0 1.5em 0;
+}
+
+.paper-shadow
+{
+    position:relative;
+    box-shadow:0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(0, 0, 0, 0.1) inset;
+}
+.paper-shadow:before, .paper-shadow:after
+{
+    content:"";
+    position:absolute;
+    z-index:-1;
+    box-shadow:0 0 20px rgba(0,0,0,0.3);
+    top:10px;
+    bottom:10px;
+    left:0;
+    right:0;
+    border-radius:100px / 10px;
+}
+.paper-shadow:after
+{
+    right:10px;
+    left:auto;
+    transform:skew(8deg) rotate(3deg);
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Accordion part ------------------ */
+/* -------------------------------------------------- */
+.accordion {
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 2px;
+}
+
+.accordion__item + .accordion__item {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+}
+
+.accordion__item--has-icon {
+    position: relative;
+}
+
+.accordion__title {
+    background-color: #f4f4f4;
+    color: #444;
+    cursor: pointer;
+    padding: 18px;
+    text-align: left;
+    border: none;
+}
+
+.accordion__title:hover {
+    background-color: #ddd;
+}
+
+.accordion__body {
+    padding: 20px;
+}
+
+.accordion__title > *:last-child,
+.accordion__body > *:last-child {
+    margin-bottom: 0;
+}
+
+.accordion__arrow {
+    display: inline-block;
+    position: relative;
+    width: 24px;
+    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 0;
+    margin-top: -6px;
+}
+
+
+.accordion__arrow::after,
+.accordion__arrow::before {
+    display: block;
+    position: absolute;
+    top: 50%;
+    width: 10px;
+    height: 2px;
+    background-color: currentColor;
+    content: '';
+}
+
+.accordion__arrow::before {
+    left: 4px;
+    transform: rotate(45deg);
+}
+
+[aria-expanded="true"] .accordion__arrow::before {
+    transform: rotate(-45deg);
+}
+
+.accordion__arrow::after {
+    right: 4px;
+    transform: rotate(-45deg);
+}
+
+[aria-expanded="true"] .accordion__arrow::after {
+    transform: rotate(45deg);
+}
+
+.accordion__arrow::before, .accordion__arrow::after {
+    transition: transform .25s ease, -webkit-transform .25s ease;
+}
+
+/* -------------------------------------------------- */
+/* ---------------- Animation part ------------------ */
+/* -------------------------------------------------- */
+
+@keyframes move-down {
+    0% { transform: translateY(0); }
+    10% { transform: translateY(0); }
+    20% { transform: translateY(5px); }
+    30% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes move-up {
+    0% { transform: translateY(0); }
+    10% { transform: translateY(0); }
+    20% { transform: translateY(-5px); }
+    30% { transform: translateY(0); }
+    100% { transform: translateY(0); }
+}
+
+.accordion__title--animated:hover .accordion__arrow {
+    animation-name: move-down;
+    animation-duration: 1.5s;
+}
+
+.accordion__title--animated[aria-expanded="true"]:hover .accordion__arrow {
+    animation-name: move-up;
+    animation-duration: 1.5s;
+}

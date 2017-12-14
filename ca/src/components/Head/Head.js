@@ -17,6 +17,7 @@ import HomeItem from './Home/Home.js';
 import MapItem from './Map/MapComponents/Map.js';
 import GraduationItem from './Graduation/GradationMain.js';
 import CreditItem from './Credit/Credit.js';
+import FAQItem from './FAQ/FAQ.js';
 
 
 import Loading from './Graduation/Loading';
@@ -394,6 +395,9 @@ class Head extends Component {
             else if(index===4){
                 ReactDOM.render(
                     <div>
+                        <FadeIn>
+                            <FAQItem/>
+                        </FadeIn>
                     </div>,
                     document.getElementById('page'));
             }
