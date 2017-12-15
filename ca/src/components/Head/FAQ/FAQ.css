@@ -18,6 +18,10 @@
     margin: 0 0 1.5em 0;
 }
 
+#faq-modal h3 {
+    font-weight: 500;
+}
+
 .paper-shadow
 {
     position:relative;
