@@ -10,7 +10,7 @@
 }
 
 #faq-modal h1 {
-    color: #444444;
+    color: #4A4A4A;
     letter-spacing: -0.015em;
     font-weight: 700;
     line-height: 1.375;
@@ -60,7 +60,7 @@
 
 .accordion__title {
     background-color: #f4f4f4;
-    color: #444;
+    color: #555;
     cursor: pointer;
     padding: 18px;
     text-align: left;
